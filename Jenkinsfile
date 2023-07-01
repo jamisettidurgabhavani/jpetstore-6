@@ -15,5 +15,15 @@ pipeline {
       }
     }
 
+    stage('Static Analysis') {
+      steps {
+        sh '''mvn clean verify sonar:sonar \\
+  -Dsonar.projectKey=JPetstore \\
+  -Dsonar.projectName=\'JPetstore\' \\
+  -Dsonar.host.url=http://52.66.226.95:9000 \\
+  -Dsonar.token=sqp_11e219efbe583d8616fe64e65bc5aa1bc0dad7ce'''
+      }
+    }
+
   }
 }
