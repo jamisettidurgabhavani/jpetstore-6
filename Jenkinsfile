@@ -17,11 +17,11 @@ pipeline {
 
     stage('Static Analysis') {
       steps {
-        sh '''./mvnw sonar:sonar \\
+        sh '''mvn clean verify sonar:sonar \\
   -Dsonar.projectKey=JPetstore \\
   -Dsonar.projectName=\'JPetstore\' \\
-  -Dsonar.host.url=http://52.66.226.95:9000 \\
-  -Dsonar.token=sqp_11e219efbe583d8616fe64e65bc5aa1bc0dad7ce'''
+  -Dsonar.host.url=http://3.111.44.130:9000 \\
+  -Dsonar.token=sqp_8013be0b2c212cca70bf954732d3ba33e97195c4'''
       }
     }
 
